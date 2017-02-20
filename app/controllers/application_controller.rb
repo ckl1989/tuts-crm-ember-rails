@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  before_action :authorize_request
+
 
   def relationship_params
     associations = {}
@@ -9,12 +11,23 @@ class ApplicationController < ActionController::API
         find_related_objects(value[:data])
       end
     end
+    associations
   end
 
   private
-    def find_related_objects(data)
-      #this will get the type object and make reference to the model
-      data[:type].singularize.titlecase.contantize.find(data[:id])
+
+  def authorize_request
+    /^Bearer (?<bearer>.*)$/ =~ request.headers['Authorization']
+    if AuthToken.where(token: bearer).count == 0
+      render json: {error: "You need to authorize to do that"}, status: :unauthorized
     end
+  end
+
+  def find_related_objects(data)
+    #this will get the type object and make reference to the model
+    klass = data[:type].underscore.classify.safe_constantize
+
+    klass.find(data[:id]) if klass
+  end
 
 end

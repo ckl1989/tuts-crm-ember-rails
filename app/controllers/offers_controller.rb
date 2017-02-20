@@ -33,6 +33,7 @@ class OffersController < ApplicationController
       @offer.project = relationship_params[:project] if relationship_params[:project]
       @offer.contacts = relationship_params[:contacts] if relationship_params[:contacts]
       @offer.tasks = relationship_params[:tasks] if relationship_params[:tasks]
+
       render json: @offer
     else
       render json: @offer.errors, status: :unprocessable_entity
