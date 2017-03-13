@@ -1,24 +1,10 @@
-# README
+Customer Relationship Managment Rails App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Backend Implementation for a CRM app inspired by Tuts+ Create a Full Stack Rails and Ember App (https://github.com/tutsplus/create-a-full-stack-rails-and-ember-app)
 
-Things you may want to cover:
+The purpose of this rails app is to demonstrate some ways a api service can be built. 
 
-* Ruby version
+This API is responsible for serving JSON in JSONAPI format to a independant frontend. 
 
-* System dependencies
+Frontend Implementation can be found here: #
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
