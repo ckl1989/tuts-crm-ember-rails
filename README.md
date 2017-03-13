@@ -6,5 +6,5 @@ The purpose of this rails app is to demonstrate some ways a api service can be b
 
 This API is responsible for serving JSON in JSONAPI format to a independant frontend. 
 
-Frontend Implementation can be found here: #
+Frontend Implementation can be found here: https://github.com/ckl1989/tuts-crm-ember-rails-frontend
 
