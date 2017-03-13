@@ -52,4 +52,4 @@ group :production do
   gem 'rails_stdout_logging'
 end
 
-gem 'redis'
+#gem 'redis'

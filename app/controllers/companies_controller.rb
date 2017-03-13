@@ -48,6 +48,8 @@ class CompaniesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def company_params
+      # byebug
+      # ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:name, :phone, :email, :website, :address, :customer_id, :additional_info])
       params.require(:data).require(:attributes).permit(:name, :phone, :email, :website, :address, :customer_id, :additional_info)
     end
 end
